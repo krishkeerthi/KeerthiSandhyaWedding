@@ -10,6 +10,8 @@
     --shadow-light: rgba(0, 0, 0, 0.1);
     --shadow-medium: rgba(0, 0, 0, 0.15);
     --border-radius: 8px;
+    /* Hero image placeholder: replace URL below with your own image */
+    --hero-image-url: url('https://drive.google.com/thumbnail?id=1p8o2quZLBXA6hip50sxg0YBiDvbzNQvR&sz=s2048');
 }
 
 body {
@@ -76,21 +78,28 @@ a:hover {
 /* Buttons */
 .btn {
     display: inline-block;
-    background-color: var(--accent-color);
+    background: linear-gradient(135deg,#ffafbd,#ffc3a0);
     color: var(--white);
     padding: 12px 25px;
     border-radius: 50px;
     text-decoration: none;
     font-weight: 500;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 3px 6px var(--shadow-light);
+    letter-spacing: 0.5px;
+    border: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,.15);
+    transition: transform .25s, box-shadow .25s;
 }
 
-.btn:hover {
-    background-color: #92C9A7; /* Slightly darker accent */
-    transform: translateY(-2px);
-    box-shadow: 0 5px 10px var(--shadow-medium);
-    text-decoration: none; /* Remove underline on hover */
+.btn:hover,
+.btn:focus {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,.25);
+    text-decoration: none;
+}
+
+.btn:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 2px;
 }
 
 /* Hero Section */
@@ -102,8 +111,7 @@ a:hover {
     align-items: center;
     color: var(--white);
     text-align: center;
-    background: url('https://via.placeholder.com/1920x1080/D1C4E9/FFFFFF?text=Wedding+Hero+Image') no-repeat center center/cover;
-    /* Replace with your actual hero image */
+    background: var(--hero-image-url) no-repeat center center/cover;
     z-index: 1;
 }
 
@@ -138,11 +146,23 @@ a:hover {
     text-shadow: 1px 1px 3px var(--shadow-medium);
 }
 
+.hero .tagline.spaced {
+    margin-top: calc(1.8rem * 5); /* 5 line gap */
+}
+
 .date-countdown {
     font-size: 1.2rem;
     font-weight: 500;
     margin-bottom: 30px;
     color: var(--white);
+}
+
+.hero-actions {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 /* Navbar */
@@ -395,6 +415,17 @@ footer p {
 
     .map-container {
         padding-bottom: 100%; /* Square map on smaller screens */
+    }
+}
+
+@media (max-width: 600px) {
+    .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .hero-actions .btn {
+        width: 100%;
+        text-align: center;
     }
 }
 
