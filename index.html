@@ -16,15 +16,26 @@
 <body>
 
     <header class="hero">
+        <!-- Hero image placeholder: set your image URL in style.css at --hero-image-url (e.g. url('https://your-domain.com/hero.jpg')) -->
+        <!-- Optional override example:
+        <style>
+            :root { --hero-image-url: url('https://your-domain.com/hero.jpg'); }
+        </style>
+        -->
         <div class="hero-content">
             <h1>Keerthi & Sandhya</h1>
             <p class="tagline">Are Getting Married !</p>
-            <p>Wedding Date: Wednesday, November 27, 2025</p>
+            <p class="tagline spaced">Reception Date: Wednesday, November 26, 2025</p>
+            <p class="tagline">Wedding Date: Thursday, November 27, 2025</p>
             <!-- <div class="date-countdown"> -->
                 <!-- <span id="wedding-date">Wedding Date: Wednesday, November 27, 2025</span> -->
                 <!-- Optional: JavaScript countdown timer here -->
             <!-- </div> -->
-            <a href="#events" class="btn">View Details</a>
+            <div class="hero-actions">
+                <a href="#livestream" class="btn">Live Stream</a>
+                <a href="#moments" class="btn">Moments</a>
+                <a href="#events" class="btn">View Details</a>
+            </div>
         </div>
     </header>
 
@@ -32,26 +43,21 @@
         <div class="nav-container">
             <a href="#" class="brand">Keerthi & Sandhya</a>
             <ul class="nav-links">
-                <li><a href="#about">Our Story</a></li>
+                <li><a href="#livestream">Live Stream</a></li>
                 <li><a href="#moments">Moments</a></li>
                 <li><a href="#events">Events</a></li>
-                <li><a href="#livestream">Live Stream</a></li>
-                <li><a href="#rsvp">RSVP</a></li>
             </ul>
         </div>
     </nav>
 
     <main>
-        <section id="about" class="section material-card">
+        <section id="livestream" class="section material-card">
             <div class="container">
-                <h2>Our Invitation & Story</h2>
+                <h2>Join Us Live!</h2>
+                <p>Can't make it in person? Be part of our celebration online.</p>
                 <div class="video-container">
-                    <!-- Replace with your YouTube/Vimeo embed code for invitation video -->
-                    <iframe src="https://www.youtube.com/embed/YOUR_INVITATION_VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe src="https://vdo.ninja/?view=htVLWSu" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
-                <p>Welcome to our wedding website! We are so thrilled to share our special day with all of you. Here, you'll find all the details about our celebration, our journey together, and how you can join us.</p>
-                <p>Our story began...</p>
-                <!-- Add more text about your story -->
             </div>
         </section>
 
@@ -63,10 +69,7 @@
                 <!-- Example structure for a very basic static carousel idea, requires JS to animate -->
                 <div class="carousel-container">
                     <div class="carousel-images">
-                        <img src="https://drive.google.com/thumbnail?id=1PkSnpSDiR69LYs2gvf6LbtnWhYUo40ww&sz=s800" alt="Wedding Moment 1">
-                        <img src="https://drive.google.com/thumbnail?id=1CVpLNzNeFNAKD-tWKC2x7UJsYCNex349&sz=s800" alt="Wedding Moment 2">
-                        <img src="https://drive.google.com/thumbnail?id=1OAay9MlPsZZu5XXJidaQE4l0-OnP_GQZ&sz=s800" alt="Wedding Moment 3">
-                        <img src="https://drive.google.com/thumbnail?id=1OK2wH_NvCATtCW2w56SwyoeN7AxzG0tH&sz=s800" alt="Wedding Moment 4">
+                        <img src="https://drive.google.com/thumbnail?id=1TkGrYncKZqgOjzbQUdiopVCzOMEIz0ED&sz=s2048" alt="Wedding Moment 1">
                     </div>
                     <!-- Add navigation buttons with JavaScript -->
                     <!-- <button class="carousel-nav prev">Prev</button> -->
@@ -75,10 +78,12 @@
                 <p>Browse through some of our favorite memories leading up to our big day!</p>
                 <!-- More photos/videos -->
                 <div class="grid-gallery">
-                    <img src="https://drive.google.com/thumbnail?id=1PkSnpSDiR69LYs2gvf6LbtnWhYUo40ww&sz=s800" alt="Memory 1">                    
-                    <img src="https://drive.google.com/thumbnail?id=1CVpLNzNeFNAKD-tWKC2x7UJsYCNex349&sz=s800" alt="Memory 2">
-                    <img src="https://drive.google.com/thumbnail?id=1OAay9MlPsZZu5XXJidaQE4l0-OnP_GQZ&sz=s800" alt="Memory 3">
-                    <img src="https://drive.google.com/thumbnail?id=1OK2wH_NvCATtCW2w56SwyoeN7AxzG0tH&sz=s800" alt="Memory 4">
+                    <img src="https://drive.google.com/thumbnail?id=1ACcuQkQp8_iJK0tprNg9EVEtIhXAc4ZR&sz=s2048" alt="Memory 1">                    
+                    <img src="https://drive.google.com/thumbnail?id=1xA3FqLe5uGx3WOGoTWRIsczsuHcvWiI3&sz=s2048" alt="Memory 2">
+                    <img src="https://drive.google.com/thumbnail?id=1wDqEhIW7UNXf6btJxknDknteiZYDkv8y&sz=s2048" alt="Memory 3">
+                    <img src="https://drive.google.com/thumbnail?id=1wCZDxLbdB6AIcp_Y8icKoOpBkm_RtTsn&sz=s2048" alt="Memory 4">
+                    <img src="https://drive.google.com/thumbnail?id=1LjLD3gMmX1wuM88lgPdz9Izkkazij3Dm&sz=s2048" alt="Memory 5">
+                    <img src="https://drive.google.com/thumbnail?id=16-yCkZQGZUO6xT28grQIdWSxNnEaqm-M&sz=s2048" alt="Memory 6">
                 </div>
             </div>
         </section>
@@ -107,20 +112,6 @@
                     <!-- Go to Google Maps, find your location, click 'Share', then 'Embed a map' and copy the iframe code -->
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.0393448218488!2d80.14699407548733!3d12.969334214927112!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a525e314d87e3bf%3A0x1681f907089d0fed!2sCantonment%20Board%20Thirumana%20Mandapam!5e0!3m2!1sen!2sin!4v1760695752538!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
-            </div>
-        </section>
-
-        <section id="livestream" class="section material-card">
-            <div class="container">
-                <h2>Join Us Live!</h2>
-                <p>Can't make it in person? Join our celebration online!</p>
-                <div class="video-container">
-                    <!-- Replace with your actual Facebook Live or YouTube Live embed code -->
-                    <!-- For YouTube Live: find your live stream, click 'Share', then 'Embed'. -->
-                    <!-- For Facebook Live: get the embed code from your live video post. -->
-                    <iframe src="https://vdo.ninja/?view=t7K5QS5" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-                <p class="livestream-note">Live stream will begin approximately 15 minutes before the ceremony.</p>
             </div>
         </section>
 
