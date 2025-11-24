@@ -10,6 +10,7 @@
     --shadow-light: rgba(0, 0, 0, 0.1);
     --shadow-medium: rgba(0, 0, 0, 0.15);
     --border-radius: 8px;
+    --space-section: clamp(3rem, 8vw, 5rem);
     /* Hero image placeholder: replace URL below with your own image */
     --hero-image-url: url('https://drive.google.com/thumbnail?id=1p8o2quZLBXA6hip50sxg0YBiDvbzNQvR&sz=s2048');
 }
@@ -38,9 +39,9 @@ h1, h2, h3, h4 {
     font-weight: 700;
 }
 
-h1 { font-size: 3.5rem; }
-h2 { font-size: 2.5rem; }
-h3 { font-size: 1.8rem; }
+h1 { font-size: clamp(2.2rem, 6vw, 3.5rem); }
+h2 { font-size: clamp(1.8rem, 5vw, 2.5rem); }
+h3 { font-size: clamp(1.3rem, 3.8vw, 1.8rem); }
 
 p {
     margin-bottom: 1rem;
@@ -57,7 +58,7 @@ a:hover {
 
 /* Material Design Card & Section Styling */
 .section {
-    padding: 80px 0;
+    padding: var(--space-section) 0;
     text-align: center;
 }
 
@@ -105,7 +106,7 @@ a:hover {
 /* Hero Section */
 .hero {
     position: relative;
-    height: 100vh;
+    min-height: 85vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -131,14 +132,14 @@ a:hover {
 }
 
 .hero h1 {
-    font-size: 5rem;
+    font-size: clamp(2.5rem, 8vw, 5rem);
     margin-bottom: 10px;
     color: var(--white);
     text-shadow: 2px 2px 4px var(--shadow-medium);
 }
 
 .hero .tagline {
-    font-size: 1.8rem;
+    font-size: clamp(1.2rem, 4.5vw, 1.8rem);
     font-family: 'Playfair Display', serif;
     font-weight: 400;
     margin-bottom: 20px;
@@ -209,6 +210,9 @@ a:hover {
     padding: 5px 0;
     position: relative;
     transition: color 0.3s ease;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
 }
 
 .nav-links a::after {
@@ -229,6 +233,31 @@ a:hover {
 .nav-links a:hover::after,
 .nav-links a.active::after {
     width: 100%;
+}
+
+/* Hamburger toggle (hidden on large screens) */
+.nav-toggle {
+    display: none;
+    background: none;
+    border: 0;
+    font-size: 1.9rem;
+    line-height: 1;
+    cursor: pointer;
+    color: var(--text-dark);
+    padding: 8px 12px;
+}
+.nav-toggle:focus-visible {
+    outline: 2px solid var(--accent-color);
+    border-radius: 4px;
+}
+
+/* Visually hidden utility for accessible labels */
+.visually-hidden {
+    position: absolute;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0 0 0 0);
+    border: 0;
 }
 
 /* Video Containers */
@@ -377,6 +406,42 @@ footer p {
 }
 
 /* Responsive Design */
+@media (max-width: 880px) {
+    .nav-container {
+        flex-wrap: wrap;
+    }
+    .nav-toggle {
+        display: block;
+        order: 1;
+    }
+    .nav-links {
+        width: 100%;
+        flex-direction: column;
+        gap: 6px;
+        margin-top: 10px;
+        display: none;
+    }
+    .nav-links.open {
+        display: flex;
+    }
+    .nav-links li {
+        margin: 0;
+    }
+    .nav-links a {
+        padding: 10px 4px;
+        font-size: 1rem;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+    .hero-actions .btn {
+        width: 100%;
+        max-width: 320px;
+    }
+}
+
 @media (max-width: 768px) {
     .hero h1 {
         font-size: 3.5rem;
@@ -419,6 +484,17 @@ footer p {
 }
 
 @media (max-width: 600px) {
+    .hero .tagline.spaced {
+        margin-top: 2rem; /* remove huge gap */
+    }
+
+    .material-card {
+        padding: 16px 18px;
+    }
+    .event-card {
+        padding: 20px;
+    }
+
     .hero-actions {
         flex-direction: column;
         align-items: stretch;
@@ -427,9 +503,7 @@ footer p {
         width: 100%;
         text-align: center;
     }
-}
 
-@media (max-width: 480px) {
     .hero h1 {
         font-size: 2.5rem;
     }
@@ -446,4 +520,43 @@ footer p {
     h1 { font-size: 2.2rem; }
     h2 { font-size: 1.8rem; }
     h3 { font-size: 1.3rem; }
+
+    .material-card,
+    .event-card,
+    .carousel-container,
+    .video-container {
+        box-shadow: 0 1px 3px var(--shadow-light);
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        min-height: 75vh;
+    }
+    .date-countdown {
+        font-size: 1rem;
+    }
+    .btn {
+        font-size: 0.95rem;
+        padding: 12px 22px;
+    }
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+    .material-card:hover,
+    .btn:hover {
+        transform: none;
+        box-shadow: 0 4px 8px var(--shadow-light);
+    }
+}
+
+/* Improve focus visibility globally */
+:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
 }
