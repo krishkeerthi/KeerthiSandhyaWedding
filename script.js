@@ -79,4 +79,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // }
     // const countdownInterval = setInterval(updateCountdown, 1000);
     // updateCountdown(); // Initial call
+
+    // Simple mobile nav toggle
+    const toggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    if (!toggle || !navLinks) return;
+
+    toggle.addEventListener('click', () => {
+        const isOpen = navLinks.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
 });
